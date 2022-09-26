@@ -1,0 +1,24 @@
+import 'package:flutter/material.dart';
+import 'package:playhard/assets/style/images_style.dart';
+
+class LogomarcaLogin extends StatelessWidget {
+  const LogomarcaLogin({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 50),
+          child: SizedBox(
+            height: 100,
+            child: Image.asset(
+              ImagesStyle().imglogomarca,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
