@@ -10,9 +10,9 @@ class LogomarcaLogin extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 50),
+          padding: const EdgeInsets.only(top: 10),
           child: SizedBox(
-            height: 100,
+            height: 80,
             child: Image.asset(
               ImagesStyle().imglogomarca,
             ),

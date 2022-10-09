@@ -38,7 +38,7 @@ class ToogleTopLogin extends StatelessWidget {
         color: ColorStyle().corTerceira,
         constraints: BoxConstraints(
           minHeight: 35.0,
-          minWidth: size.width / 2.25,
+          minWidth: size.width / 2.3,
         ),
         isSelected: const [true, false],
         children: botaotopo,

@@ -24,51 +24,53 @@ class LoginPage extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: ColorStyle().fundoGradiente,
         ),
-        child: Column(
-          children: [
-            SizedBox(
-              width: size.width,
-              height: size.height / 2.5,
-              child: Stack(
-                children: [
-                  // Imagem para Fundo Topo Login
-                  const FundoTopo(),
-                  // Gradiente Sobrepondo a Imagem Acima p/ efeito
-                  const FundoTopoGradiente(),
-                  Column(
-                    children: const [
-                      // Logomarca PlayHard
-                      LogomarcaLogin(),
-                      SizedBox(height: 30),
-                      // Toogle para Login
-                      ToogleTopLogin(),
-                      SizedBox(height: 30),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                width: size.width,
+                height: size.height / 2.5,
+                child: Stack(
+                  children: [
+                    // Imagem para Fundo Topo Login
+                    const FundoTopo(),
+                    // Gradiente Sobrepondo a Imagem Acima p/ efeito
+                    const FundoTopoGradiente(),
+                    Column(
+                      children: const [
+                        // Logomarca PlayHard
+                        LogomarcaLogin(),
+                        SizedBox(height: 10),
+                        // Toogle para Login
+                        ToogleTopLogin(),
+                        SizedBox(height: 10),
 
-                      // texto para codigo e informaçoes topo
-                      TextoTopoLogin(),
-                      SizedBox(height: 10),
+                        // texto para codigo e informaçoes topo
+                        TextoTopoLogin(),
+                        SizedBox(height: 10),
 
-                      //barra de progresso topo
-                      ProgressBarLogin(),
-                    ],
-                  ),
-                ],
+                        //barra de progresso topo
+                        ProgressBarLogin(),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-            const SizedBox(height: 30),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Column(
-                children:const[
+              const SizedBox(height: 30),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Column(
+                  children: const [
                     TextoMeioLogin(),
-                  
-                  BotaoMeioLogin(texto: "Remove Authenticator"),
-                  BotaoMeioLogin(texto: "My Recovery Code"),
-                  BotaoMeioLogin(texto: "Help"),
-                ],
-              ),
-            )
-          ],
+                    BotaoMeioLogin(texto: "Remove Authenticator"),
+                    BotaoMeioLogin(texto: "My Recovery Code"),
+                    BotaoMeioLogin(texto: "Help"),
+                    const SizedBox(height: 30),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: const BottomNavigatorBarComponents(),
