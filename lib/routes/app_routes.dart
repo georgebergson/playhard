@@ -4,4 +4,5 @@ abstract class Routes {
   static const inicio = '/';
   static const login = '/login';
   static const comunidade = '/comunidade';
+  static const chat = '/chat';
 }

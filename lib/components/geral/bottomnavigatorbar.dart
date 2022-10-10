@@ -19,6 +19,9 @@ class BottomNavigatorBarComponents extends StatelessWidget {
           if (index == 1) {
             Get.toNamed('/comunidade');
           }
+          if (index == 2) {
+            Get.toNamed('/chat');
+          }
         },
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(

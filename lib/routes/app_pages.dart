@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:playhard/pages/chat/chat_page.dart';
 import 'package:playhard/pages/comunidade/comunidade_page.dart';
 import 'package:playhard/pages/login/login_page.dart';
 part './app_routes.dart';
@@ -12,6 +13,10 @@ class AppPages {
     GetPage(
       name: Routes.comunidade,
       page: () => const ComunidadePage(),
+    ),
+    GetPage(
+      name: Routes.chat,
+      page: () => const ChatPage(),
     ),
   ];
 }
