@@ -22,12 +22,12 @@ class ColorStyle {
       Color.fromRGBO(28, 32, 44, 1),
     ],
   );
- // fim constantes gradientes
+  // fim constantes gradientes
 
-
- // cores para o sistema 
- final corPrimaria  = const Color.fromRGBO(28, 32, 44, 1);
- final corSecundaria = const Color(0xFF303649);
- final corTerceira = const  Color.fromARGB(255, 123, 141, 157);
- final corBotaoPrimario = const Color.fromARGB(255, 41, 47, 67);
+  // cores para o sistema
+  final corPrimaria = const Color.fromRGBO(28, 32, 44, 1);
+  final corSecundaria = const Color(0xFF303649);
+  final corTerceira = const Color.fromARGB(255, 123, 141, 157);
+  final corBotaoPrimario = const Color.fromARGB(255, 41, 47, 67);
+  final corHr = Color.fromARGB(255, 23, 26, 36);
 }

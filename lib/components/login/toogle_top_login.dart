@@ -37,7 +37,7 @@ class ToogleTopLogin extends StatelessWidget {
         fillColor: ColorStyle().corPrimaria,
         color: ColorStyle().corTerceira,
         constraints: BoxConstraints(
-          minHeight: 35.0,
+          minHeight: 30.0,
           minWidth: size.width / 2.3,
         ),
         isSelected: const [true, false],

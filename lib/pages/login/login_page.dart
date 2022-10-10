@@ -29,7 +29,7 @@ class LoginPage extends StatelessWidget {
             children: [
               SizedBox(
                 width: size.width,
-                height: size.height / 2.5,
+                height: size.height / 2.2,
                 child: Stack(
                   children: [
                     // Imagem para Fundo Topo Login
@@ -43,11 +43,10 @@ class LoginPage extends StatelessWidget {
                         SizedBox(height: 10),
                         // Toogle para Login
                         ToogleTopLogin(),
-                        SizedBox(height: 10),
+                        SizedBox(height: 20),
 
                         // texto para codigo e informaçoes topo
                         TextoTopoLogin(),
-                        SizedBox(height: 10),
 
                         //barra de progresso topo
                         ProgressBarLogin(),

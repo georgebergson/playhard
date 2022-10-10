@@ -10,7 +10,7 @@ class FundoTopo extends StatelessWidget {
     return Image.asset(
       ImagesStyle().imgfundotopo,
       width: size.width,
-      height: size.height / 2.5,
+      height: size.height / 2.2,
       fit: BoxFit.cover,
     );
   }
