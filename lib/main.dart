@@ -6,11 +6,12 @@ import 'package:playhard/routes/app_pages.dart';
 void main() {
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
-        initialRoute: Routes.login, //Rota inicial
-        // initialBinding: HomeBinding(), // dependencias iniciais
-        // theme: appThemeData, //Tema personalizado app
-        defaultTransition: Transition.cupertino, // Transição de telas padrão
-        getPages: AppPages.routes, // Seu array de navegação contendo as rotas e suas pages
-        home: const LoginPage(), // Page inicial
+    initialRoute: Routes.login, //Rota inicial
+    // initialBinding: HomeBinding(), // dependencias iniciais
+    theme: ThemeData(),
+    defaultTransition: Transition.cupertino, // Transição de telas padrão
+    getPages: AppPages
+        .routes, // Seu array de navegação contendo as rotas e suas pages
+    home: const LoginPage(), // Page inicial
   ));
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:playhard/assets/style/color_style.dart';
-import 'package:playhard/components/chat/lista_chat.dart';
 import 'package:playhard/components/geral/bottomnavigatorbar.dart';
 import 'package:playhard/components/home/botaomeio_home.dart';
 import 'package:playhard/components/home/fundotopo.dart';
@@ -11,13 +10,12 @@ import 'package:playhard/components/home/textomeio_home.dart';
 import 'package:playhard/components/home/textotop_home.dart';
 import 'package:playhard/components/home/toogle_top_home.dart';
 
-class ChatPage extends StatelessWidget {
-  const ChatPage({Key? key}) : super(key: key);
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-
     return Scaffold(
       //background gradiente geral
       body: Container(
@@ -31,7 +29,7 @@ class ChatPage extends StatelessWidget {
             children: [
               SizedBox(
                 width: size.width,
-                height: size.height / 3.4,
+                height: size.height / 2.2,
                 child: Stack(
                   children: [
                     // Imagem para Fundo Topo Login
@@ -46,21 +44,30 @@ class ChatPage extends StatelessWidget {
                         // Toogle para Login
                         ToogleTopLogin(),
                         SizedBox(height: 20),
+
+                        // texto para codigo e informaçoes topo
+                        TextoTopoLogin(),
+
+                        //barra de progresso topo
+                        ProgressBarLogin(),
                       ],
                     ),
                   ],
                 ),
               ),
               const SizedBox(height: 30),
-              ListaChat(),
-              ListaChat(),
-              ListaChat(),
-              ListaChat(),
-              ListaChat(),
-              ListaChat(),
-              ListaChat(),
-              ListaChat(),
-              ListaChat(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Column(
+                  children: const [
+                    TextoMeioLogin(),
+                    BotaoMeioLogin(texto: "Remove Authenticator"),
+                    BotaoMeioLogin(texto: "My Recovery Code"),
+                    BotaoMeioLogin(texto: "Help"),
+                    const SizedBox(height: 30),
+                  ],
+                ),
+              )
             ],
           ),
         ),

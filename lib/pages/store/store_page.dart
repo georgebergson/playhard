@@ -3,7 +3,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:playhard/assets/style/color_style.dart';
 import 'package:playhard/components/geral/bottomnavigatorbar.dart';
-import 'package:playhard/components/login/logomarca_login.dart';
+import 'package:playhard/components/home/logomarca_home.dart';
 import 'package:playhard/components/store/lista_store.dart';
 
 class StorePage extends StatelessWidget {
