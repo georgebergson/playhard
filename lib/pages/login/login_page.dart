@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:playhard/assets/style/color_style.dart';
 import 'package:playhard/components/home/fundotopogradiente.dart';
 import 'package:playhard/components/home/logomarca_home.dart';
 import 'package:playhard/components/login/fundo_login.dart';
+import 'package:playhard/controllers/login_controller.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -10,6 +12,26 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    LoginController logincontroller = Get.put(LoginController());
+    alerta(titulo, mensagem) {
+      showDialog<String>(
+        context: context,
+        builder: (BuildContext context) => AlertDialog(
+          title: Text('$titulo'),
+          content: Text('$mensagem'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () => Navigator.pop(context, 'OK'),
+              child: Text(
+                'OK',
+                style: TextStyle(color: ColorStyle().corPrimaria),
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
     return Scaffold(
       //background gradiente geral
       body: Container(
@@ -63,6 +85,7 @@ class LoginPage extends StatelessWidget {
                                     color: Colors.white70,
                                     borderRadius: BorderRadius.circular(20)),
                                 child: TextField(
+                                  onChanged: logincontroller.pegaUsuario,
                                   cursorColor: Colors.red,
                                   decoration: InputDecoration(
                                     labelText: 'Usuario:',
@@ -89,6 +112,7 @@ class LoginPage extends StatelessWidget {
                                     color: Colors.white70,
                                     borderRadius: BorderRadius.circular(20)),
                                 child: TextField(
+                                  onChanged: logincontroller.pegaSenha,
                                   obscureText: true,
                                   cursorColor: Colors.red,
                                   decoration: InputDecoration(
@@ -115,7 +139,20 @@ class LoginPage extends StatelessWidget {
                                 width: size.width,
                                 height: 50,
                                 child: ElevatedButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    final retorno =
+                                        logincontroller.fazerLogin();
+
+                                    if (retorno == 0) {
+                                      alerta("ATENÇÃO",
+                                          "Preencha o Campo Usuario:");
+                                    } else if (retorno == 1) {
+                                      alerta(
+                                          "ATENÇÃO", "Preencha o Campo Senha:");
+                                    } else if (retorno == 2) {
+                                      Get.offNamed('home');
+                                    }
+                                  },
                                   child: Text('ACESSAR SUA CONTA'),
                                   style: ButtonStyle(
                                     shape: MaterialStateProperty.all<
