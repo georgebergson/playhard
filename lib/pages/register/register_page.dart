@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -7,18 +7,14 @@ import 'package:playhard/components/home/fundotopogradiente.dart';
 import 'package:playhard/components/home/logomarca_home.dart';
 import 'package:playhard/components/login/fundo_login.dart';
 import 'package:playhard/controllers/login_controller.dart';
-import 'package:playhard/pages/home/home_page.dart';
-import 'package:playhard/pages/register/register_page.dart';
 
-import '../../routes/app_pages.dart';
-
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    LoginController logincontroller = Get.put(LoginController());
+    // LoginController logincontroller = Get.put(LoginController());
     alerta(titulo, mensagem) {
       showDialog<String>(
         context: context,
@@ -72,11 +68,10 @@ class LoginPage extends StatelessWidget {
                         children: [
                           Column(
                             children: [
-                              SizedBox(
-                                height: size.height / 1.8,
-                              ),
+                              SizedBox(height: 150 //size.height / 1.8,
+                                  ),
                               Text(
-                                'INICIAR SESSÃO',
+                                'REGISTRA-SE',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'PingFang',
@@ -91,10 +86,10 @@ class LoginPage extends StatelessWidget {
                                     color: Colors.white70,
                                     borderRadius: BorderRadius.circular(20)),
                                 child: TextField(
-                                  onChanged: logincontroller.pegaUsuario,
+                                  ///onChanged: logincontroller.pegaUsuario,
                                   cursorColor: Colors.red,
                                   decoration: InputDecoration(
-                                    labelText: 'Usuario:',
+                                    labelText: 'Nome:',
                                     hintText: 'Digite seu Usuario',
                                     prefixIcon: Icon(
                                       Icons.person,
@@ -118,14 +113,95 @@ class LoginPage extends StatelessWidget {
                                     color: Colors.white70,
                                     borderRadius: BorderRadius.circular(20)),
                                 child: TextField(
-                                  onChanged: logincontroller.pegaSenha,
+                                  ///onChanged: logincontroller.pegaUsuario,
+                                  cursorColor: Colors.red,
+                                  decoration: InputDecoration(
+                                    labelText: 'CPF',
+                                    hintText: 'Digite seu CPF',
+                                    prefixIcon: Icon(
+                                      Icons.account_balance_rounded,
+                                      color: ColorStyle().corPrimaria,
+                                    ),
+                                    hintStyle: TextStyle(
+                                      color: ColorStyle().corPrimaria,
+                                      fontSize: 18,
+                                    ),
+                                    focusedBorder: InputBorder.none,
+                                    labelStyle: TextStyle(
+                                        color: ColorStyle().corPrimaria,
+                                        fontSize: 16),
+                                    enabledBorder: InputBorder.none,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.white70,
+                                    borderRadius: BorderRadius.circular(20)),
+                                child: TextField(
+                                  ///onChanged: logincontroller.pegaUsuario,
+                                  cursorColor: Colors.red,
+                                  decoration: InputDecoration(
+                                    labelText: 'Email:',
+                                    hintText: 'Digite seu Email',
+                                    prefixIcon: Icon(
+                                      Icons.email,
+                                      color: ColorStyle().corPrimaria,
+                                    ),
+                                    hintStyle: TextStyle(
+                                      color: ColorStyle().corPrimaria,
+                                      fontSize: 18,
+                                    ),
+                                    focusedBorder: InputBorder.none,
+                                    labelStyle: TextStyle(
+                                        color: ColorStyle().corPrimaria,
+                                        fontSize: 16),
+                                    enabledBorder: InputBorder.none,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.white70,
+                                    borderRadius: BorderRadius.circular(20)),
+                                child: TextField(
+                                  //onChanged: logincontroller.pegaSenha,
                                   obscureText: true,
                                   cursorColor: Colors.red,
                                   decoration: InputDecoration(
                                     labelText: 'Senha:',
                                     hintText: 'Digite sua Senha',
                                     prefixIcon: Icon(
-                                      Icons.person,
+                                      Icons.password,
+                                      color: ColorStyle().corPrimaria,
+                                    ),
+                                    hintStyle: TextStyle(
+                                      color: ColorStyle().corPrimaria,
+                                      fontSize: 18,
+                                    ),
+                                    focusedBorder: InputBorder.none,
+                                    labelStyle: TextStyle(
+                                        color: ColorStyle().corPrimaria,
+                                        fontSize: 16),
+                                    enabledBorder: InputBorder.none,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.white70,
+                                    borderRadius: BorderRadius.circular(20)),
+                                child: TextField(
+                                  ///onChanged: logincontroller.pegaUsuario,
+                                  cursorColor: Colors.red,
+                                  decoration: InputDecoration(
+                                    labelText: 'Confirmação de Senha:',
+                                    hintText: 'Digite seu Senha',
+                                    prefixIcon: Icon(
+                                      Icons.password,
                                       color: ColorStyle().corPrimaria,
                                     ),
                                     hintStyle: TextStyle(
@@ -146,14 +222,9 @@ class LoginPage extends StatelessWidget {
                                 height: 50,
                                 child: ElevatedButton(
                                   onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => const HomePage(),
-                                      ),
-                                    );
+                                    Navigator.pop(context);
                                   },
-                                  child: Text('ACESSAR SUA CONTA'),
+                                  child: Text('REGISTRAR'),
                                   style: ButtonStyle(
                                     shape: MaterialStateProperty.all<
                                         RoundedRectangleBorder>(
@@ -168,27 +239,6 @@ class LoginPage extends StatelessWidget {
                               ),
                             ],
                           ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Column(
-                            children: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const RegisterPage()),
-                                  );
-                                },
-                                child: Text(
-                                  'REGISTRAR',
-                                  style: const TextStyle(color: Colors.red),
-                                ),
-                              )
-                            ],
-                          )
                         ],
                       ),
                     ),

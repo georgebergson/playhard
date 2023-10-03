@@ -7,4 +7,6 @@ abstract class Routes {
   static const comunidade = '/comunidade';
   static const chat = '/chat';
   static const store = '/store';
+  static const register = '/register';
+  
 }
